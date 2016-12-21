@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
 
         viewHolder.tv_country.setText(String.valueOf(countries.get(i)));
+
     }
 
     @Override
@@ -47,12 +49,18 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, countries.size());
     }
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView tv_country;
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tv_country, undo_text, undo_button;
+        LinearLayout layoutUndo;
+
         public ViewHolder(View view) {
             super(view);
-
-            tv_country = (TextView)view.findViewById(R.id.tv_country);
+            layoutUndo = (LinearLayout) view.findViewById(R.id.undo);
+            undo_button = (TextView) view.findViewById(R.id.undo_button);
+            undo_text = (TextView) view.findViewById(R.id.undo_text);
+            tv_country = (TextView) view.findViewById(R.id.tv_country);
         }
     }
+
 }
