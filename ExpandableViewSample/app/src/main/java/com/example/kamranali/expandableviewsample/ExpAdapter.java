@@ -15,13 +15,13 @@ import java.util.List;
  */
 
 public class ExpAdapter extends BaseExpandableListAdapter {
-    private HashMap<String, List<String>> moviesCategory;
+    private HashMap<String, List<String>> moviesCategoryMap;
     private List<String> moviesList;
     private Context context;
 
     public ExpAdapter(Context context, HashMap<String, List<String>> moviesCategory, List<String> moviesList) {
         this.context = context;
-        this.moviesCategory = moviesCategory;
+        this.moviesCategoryMap = moviesCategory;
         this.moviesList = moviesList;
     }
 
@@ -30,12 +30,12 @@ public class ExpAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getGroupCount() {
-        return moviesCategory.size();
+        return moviesCategoryMap.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return moviesCategory.get(moviesList.get(groupPosition)).size();
+        return moviesCategoryMap.get(moviesList.get(groupPosition)).size();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ExpAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return moviesCategory.get(moviesList.get(groupPosition)).get(childPosition);
+        return moviesCategoryMap.get(moviesList.get(groupPosition)).get(childPosition);
     }
 
     @Override

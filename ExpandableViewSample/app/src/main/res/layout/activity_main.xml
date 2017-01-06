@@ -14,6 +14,7 @@
         android:id="@+id/exap_listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
         android:divider="@color/colorAccent"
         android:dividerHeight="0.56dp"></ExpandableListView>
 </RelativeLayout>

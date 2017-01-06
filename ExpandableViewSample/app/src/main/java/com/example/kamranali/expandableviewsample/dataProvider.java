@@ -11,6 +11,7 @@ import java.util.List;
 public class DataProvider {
 
     public static HashMap<String, List<String>> getInfo() {
+
         HashMap<String, List<String>> moviesCategory = new HashMap<>();
         List<String> actionMovies = new ArrayList<>();
         List<String> comdeyMovies = new ArrayList<>();
