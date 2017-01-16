@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "613519629783",
+    "firebase_url": "https://geofencefinale.firebaseio.com",
+    "project_id": "geofencefinale",
+    "storage_bucket": "geofencefinale.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613519629783:android:52035c3508144c38",
+        "android_client_info": {
+          "package_name": "com.example.kamranali.geofencefinale"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613519629783-dai5ehvrutu8cb0sa8e56edtfacfgigq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0ZZuV5-NqEt0UCkDTOicthsFAoc4Db38"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

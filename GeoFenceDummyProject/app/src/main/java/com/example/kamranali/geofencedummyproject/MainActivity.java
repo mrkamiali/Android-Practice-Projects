@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         // Empty list for storing geofences.
         mGeofenceList = new ArrayList<Geofence>();
 
-        mSharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCES_NAME,
+               mSharedPreferences = getSharedPreferences(Constants.SHARED_PREFERENCES_NAME,
                 MODE_PRIVATE);
         mGeofencesAdded = mSharedPreferences.getBoolean(Constants.GEOFENCES_ADDED_KEY, false);
 
