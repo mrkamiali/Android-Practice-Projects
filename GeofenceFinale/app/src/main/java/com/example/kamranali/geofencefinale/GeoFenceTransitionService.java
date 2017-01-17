@@ -197,8 +197,8 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
             googleApiClient.connect();
         }
         if (!googleApiClient.isConnected()) {
-
-            googleApiClient.connect();
+            Intent intent1 = new Intent(this,GeoFenceTransitionService.class);
+            startService(intent1);
         }
         if (googleApiClient.isConnected()) {
             Toast.makeText(this, "ApiConnected", Toast.LENGTH_LONG).show();
