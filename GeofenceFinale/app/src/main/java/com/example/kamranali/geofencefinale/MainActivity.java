@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                             Model value = ab.getValue(Model.class);
                             dataBase.writeFences(value);
                             Log.d(TAG, value.toString());
-                            Toast.makeText(MainActivity.this,"ValueStored to DB",Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this,"ValueStored to DB",Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        unregisterReceiver(broadCast);
     }
     //    private synchronized void  buildGoogleApiClient() {
 //        googleApiClient = new GoogleApiClient.Builder(this)

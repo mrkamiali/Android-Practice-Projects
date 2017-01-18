@@ -22,6 +22,7 @@ public class Constants {
     public static final String GEOFENCES_ADDED_KEY = PACKAGE_NAME + ".GEOFENCES_ADDED_KEY";
 
     public static final String FENCES_NODE= "fences";
+    public static final String SERVICE_EXTRAS= "extras";
 
     /**
      * Used to set an expiration time for a geofence. After this amount of time Location Services

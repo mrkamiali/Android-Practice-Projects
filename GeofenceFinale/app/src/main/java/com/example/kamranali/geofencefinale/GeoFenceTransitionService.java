@@ -47,7 +47,7 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
     private Model model;
     private boolean mGeofencesAdded;
     private DataBase dataBase;
-
+    boolean booleanExtra;
     private static GeoFenceTransitionService ourInstance;
 
 
@@ -59,7 +59,7 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
     @Override
     public void onCreate() {
         super.onCreate();
-        Toast.makeText(this, "OnCreat ", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "OnCreat ", Toast.LENGTH_SHORT).show();
 
         firebaseDatabase = FirebaseDatabase.getInstance().getReference();
         mGeofenceList = new ArrayList<Geofence>();
@@ -67,7 +67,41 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
         dataBase = new DataBase(this);
 
     }
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
 
+        if (intent != null) {
+
+        if (googleApiClient == null) {
+            buildGoogleApiClient();
+            googleApiClient.connect();
+        } else if (!googleApiClient.isConnected() || googleApiClient.isConnecting()) {
+            googleApiClient.connect();
+        }
+        if (!googleApiClient.isConnected()) {
+            Intent intent1 = new Intent(this, GeoFenceTransitionService.class);
+            intent1.putExtra(Constants.SERVICE_EXTRAS,true);
+            startService(intent1);
+        }else if (googleApiClient.isConnected()) {
+            Toast.makeText(this, "ApiConnected", Toast.LENGTH_LONG).show();
+            populateGeofenceList();
+            booleanExtra = intent.getBooleanExtra(Constants.SERVICE_EXTRAS, false);
+            geofenceHandler();
+        }
+    }
+        Toast.makeText(this, "ServiceStarted ", Toast.LENGTH_SHORT).show();
+        return START_STICKY;
+    }
+
+
+    //3rd
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (googleApiClient.isConnected()) {
+            googleApiClient.disconnect();
+        }
+    }
     public void geofenceHandler() {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -80,6 +114,7 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
             return;
         }
         try {
+            Toast.makeText(this,"FencesRegestring",Toast.LENGTH_SHORT).show();
             LocationServices.GeofencingApi.addGeofences(
                     googleApiClient,
                     // The GeofenceRequest object.
@@ -123,7 +158,6 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
-        googleApiClient.connect();
 
     }
 
@@ -131,7 +165,8 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
         List<Model> models = dataBase.reterivingList();
 
         for (Model model1 : models) {
-            Toast.makeText(this, "Initilizing ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Initilizing ", Toast.LENGTH_SHORT).show();
+
             mGeofenceList.add(new Geofence.Builder()
                     .setRequestId(model1.getPlaceName())
                     .setCircularRegion(
@@ -187,39 +222,7 @@ public class GeoFenceTransitionService extends Service implements GoogleApiClien
     }
 
     //2nd
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
 
-        if (googleApiClient == null) {
-            buildGoogleApiClient();
-            googleApiClient.connect();
-        } else if (!googleApiClient.isConnected() || googleApiClient.isConnecting()) {
-            googleApiClient.connect();
-        }
-        if (!googleApiClient.isConnected()) {
-            Intent intent1 = new Intent(this,GeoFenceTransitionService.class);
-            startService(intent1);
-        }
-        if (googleApiClient.isConnected()) {
-            Toast.makeText(this, "ApiConnected", Toast.LENGTH_LONG).show();
-
-            populateGeofenceList();
-            geofenceHandler();
-
-        }
-        Toast.makeText(this, "ServiceStarted ", Toast.LENGTH_LONG).show();
-        return START_STICKY;
-    }
-
-
-    //3rd
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (googleApiClient.isConnected()) {
-            googleApiClient.disconnect();
-        }
-    }
 
     @Nullable
     @Override

@@ -15,6 +15,7 @@ public class BroadCast extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Intent serviceIntent = new Intent(context, GeoFenceTransitionService.class);
+        serviceIntent.putExtra(Constants.SERVICE_EXTRAS,true);
         context.startService(serviceIntent);
     }
 
