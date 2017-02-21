@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "104116513175",
+    "firebase_url": "https://fir-dummy-fa796.firebaseio.com",
+    "project_id": "fir-dummy-fa796",
+    "storage_bucket": "fir-dummy-fa796.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104116513175:android:65b404b302d4bd5b",
+        "android_client_info": {
+          "package_name": "com.kamranali.firebasemodel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104116513175-1qe91fsp1cpd08qo9uakju9v13v8rpuj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfO_jW2CoUUy_fvXekiuxtbv2WK9WjxPg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
