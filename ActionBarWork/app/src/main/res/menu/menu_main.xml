@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kamranali.actionbarwork.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Test_1"
+        android:orderInCategory="1"
+        android:title="Test_1"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Test_2"
+        android:orderInCategory="2"
+        android:title="Test_2"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Test_3"
+        android:orderInCategory="3"
+        android:title="Test_3"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/Test_4"
+        android:orderInCategory="4"
+        android:title="Test_4"
+        app:showAsAction="never" />
+
+</menu>
