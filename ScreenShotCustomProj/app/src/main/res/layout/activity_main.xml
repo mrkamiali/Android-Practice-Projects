@@ -29,5 +29,10 @@
         android:layout_height="250dp"
         android:background="#ccc"
         android:padding="5dp" />
-    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Particular Image"
+        android:id="@+id/particularImge"/>
+
 </LinearLayout>

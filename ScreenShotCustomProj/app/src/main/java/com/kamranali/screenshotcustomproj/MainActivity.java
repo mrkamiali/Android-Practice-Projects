@@ -1,7 +1,9 @@
 package com.kamranali.screenshotcustomproj;
 
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.constraint.solver.widgets.Rectangle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,13 +14,16 @@ import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
     ImageView imageView;
     Bitmap mbitmap;
-    Button captureScreenShot;
+    Button captureScreenShot,particularImge ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +33,52 @@ public class MainActivity extends AppCompatActivity {
         textView.setText("Your ScreenShot Image:");
 
         captureScreenShot = (Button) findViewById(R.id.capture_screen_shot);
+        particularImge = (Button) findViewById(R.id.particularImge);
         imageView = (ImageView) findViewById(R.id.imageView);
+
+        particularImge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                particularScreenShot();
+            }
+        });
+
+    }
+
+    private void particularScreenShot() {
+        View u = findViewById(R.id.imageView);
+        u.setDrawingCacheEnabled(true);
+
+        int totalHeight = imageView.getHeight();
+        int totalWidth = imageView.getWidth();
+        u.layout(0, 0, totalWidth, totalHeight);
+        u.buildDrawingCache(true);
+        Bitmap b = Bitmap.createBitmap(u.getDrawingCache());
+        u.setDrawingCacheEnabled(false);
+
+//        //Save bitmap
+//        String extr = Environment.getExternalStorageDirectory().toString() +   File.separator + "Folder";
+//        String fileName = new SimpleDateFormat("yyyyMMddhhmm'_report.jpg'").format(new Date());
+//        File myPath = new File(extr, fileName);
+//        FileOutputStream fos = null;
+//        try {
+//            fos = new FileOutputStream(myPath);
+//            b.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+//            fos.flush();
+//            fos.close();
+//            MediaStore.Images.Media.insertImage(getContentResolver(), b, "Screen", "screen");
+            imageView.setImageBitmap(b);
+//        }catch (FileNotFoundException e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            // TODO Auto-generated catch block
+//            e.printStackTrace();
+//        }
 
 
     }
+
     public void screenShot(View view) {
         mbitmap = getBitmapOFRootView(captureScreenShot);
         imageView.setImageBitmap(mbitmap);
