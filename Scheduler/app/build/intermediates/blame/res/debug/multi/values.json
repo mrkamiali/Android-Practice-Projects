@@ -1,0 +1,334 @@
+[
+    {
+        "outputFile": "E:\\PanaCloud\\Scheduler\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 42,
+                    "endOffset": 93
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 880,
+                        "endColumn": 42,
+                        "endOffset": 918
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 98,
+                    "endColumn": 43,
+                    "endOffset": 137
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 836,
+                        "endColumn": 43,
+                        "endOffset": 875
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 142,
+                    "endColumn": 44,
+                    "endOffset": 182
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 791,
+                        "endColumn": 44,
+                        "endOffset": 831
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 187,
+                    "endColumn": 42,
+                    "endOffset": 225
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 748,
+                        "endColumn": 42,
+                        "endOffset": 786
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 230,
+                    "endColumn": 41,
+                    "endOffset": 267
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\dimens.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 706,
+                        "endColumn": 41,
+                        "endOffset": 743
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 272,
+                    "endColumn": 46,
+                    "endOffset": 314
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 620,
+                        "endColumn": 46,
+                        "endOffset": 662
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 319,
+                    "endColumn": 52,
+                    "endOffset": 367
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 27,
+                        "startColumn": 4,
+                        "startOffset": 1322,
+                        "endColumn": 52,
+                        "endOffset": 1370
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 372,
+                    "endColumn": 62,
+                    "endOffset": 430
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 1565,
+                        "endColumn": 62,
+                        "endOffset": 1623
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 435,
+                    "endColumn": 53,
+                    "endOffset": 484
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1375,
+                        "endColumn": 53,
+                        "endOffset": 1424
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 489,
+                    "endColumn": 73,
+                    "endOffset": 558
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 29,
+                        "startColumn": 4,
+                        "startOffset": 1429,
+                        "endColumn": 73,
+                        "endOffset": 1498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 563,
+                    "endLine": 19,
+                    "endColumn": 26,
+                    "endOffset": 1162
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 667,
+                        "endLine": 25,
+                        "endColumn": 26,
+                        "endOffset": 1266
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1167,
+                    "endColumn": 61,
+                    "endOffset": 1224
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 30,
+                        "startColumn": 4,
+                        "startOffset": 1503,
+                        "endColumn": 61,
+                        "endOffset": 1560
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 1229,
+                    "endColumn": 50,
+                    "endOffset": 1275
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 1271,
+                        "endColumn": 50,
+                        "endOffset": 1317
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 22,
+                    "startColumn": 4,
+                    "startOffset": 1280,
+                    "endColumn": 59,
+                    "endOffset": 1335
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 651,
+                        "endColumn": 60,
+                        "endOffset": 707
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 23,
+                    "startColumn": 4,
+                    "startOffset": 1340,
+                    "endColumn": 52,
+                    "endOffset": 1388
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 22,
+                        "startColumn": 4,
+                        "startOffset": 713,
+                        "endColumn": 53,
+                        "endOffset": 762
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 24,
+                    "startColumn": 4,
+                    "startOffset": 1393,
+                    "endColumn": 26,
+                    "endOffset": 1415
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 26,
+                        "startColumn": 4,
+                        "startOffset": 797,
+                        "endColumn": 27,
+                        "endOffset": 820
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1420,
+                    "endLine": 29,
+                    "endColumn": 12,
+                    "endOffset": 1675
+                },
+                "from": {
+                    "file": "E:\\PanaCloud\\Scheduler\\app\\src\\main\\res\\values\\styles.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 826,
+                        "endLine": 32,
+                        "endColumn": 12,
+                        "endOffset": 1081
+                    }
+                }
+            }
+        ]
+    }
+]
