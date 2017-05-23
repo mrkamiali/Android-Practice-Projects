@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">JsonRequestProj</string>
+    <string name="response_text">Enter book name and click Search button.</string>
+</resources>

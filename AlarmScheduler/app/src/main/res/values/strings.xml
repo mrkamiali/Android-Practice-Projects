@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AlarmScheduler</string>
+    <string name="connection_error">Connection_Error</string>
+</resources>
