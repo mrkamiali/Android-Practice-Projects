@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "849886549945",
+    "firebase_url": "https://imagedb-fc793.firebaseio.com",
+    "project_id": "imagedb-fc793",
+    "storage_bucket": "imagedb-fc793.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849886549945:android:60bc91b8732d0234",
+        "android_client_info": {
+          "package_name": "com.kamranali.viewtobitmap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849886549945-iqf0ej6n69ofv2orl071601540n70n0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuqAic8C7ZUr9ceUy0HaF897sOYmTJyG8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

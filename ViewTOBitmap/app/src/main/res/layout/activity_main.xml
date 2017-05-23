@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kamranali.viewtobitmap.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/policy_setting_relativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/policy_navigate_back"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_margin="10dp"
+                android:background="@mipmap/ic_launcher"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/policy_setting_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_toRightOf="@+id/policy_navigate_back"
+                android:fontFamily="Roboto"
+                android:text="Policy Setting"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffa6a8ac"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:id="@+id/policy_setting_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/policy_setting_heading"
+                android:background="#ff979797"/>
+
+            <ScrollView
+                android:id="@+id/policy_setting_scrollview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/bottom_buttons_layout"
+                android:layout_below="@+id/policy_setting_view">
+
+                <RelativeLayout
+                    android:id="@+id/policy_setting_main_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:hint="Policy Name"
+                        android:maxLength="30"
+                        android:padding="10dp"
+                        android:singleLine="true" />
+
+                    <TextView
+                        android:id="@+id/criteria_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="30dp"
+                        android:padding="10dp"
+                        android:text="Please Select Your Criteria"
+                        android:textColor="#000"
+                        android:textSize="18dp" />
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_below="@id/criteria_heading"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Location Based" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View
+                            android:id="@+id/location_based_divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="#706e6e" />
+
+                        <FrameLayout
+                            android:id="@+id/map"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_below="@id/location_based_divider"
+                            />
+
+                        <View
+                            android:id="@+id/shadowview"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignTop="@+id/toolbaricons"
+                            android:background="@mipmap/ic_launcher" />
+
+
+                        <FrameLayout
+                            android:id="@+id/toolbaricons"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_below="@id/map"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp">
+
+                            <RelativeLayout
+                                android:id="@+id/addbuttonlayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/searchbutton"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginTop="3dp"
+                                    android:background="@mipmap/ic_launcher" />
+
+                                <ImageButton
+                                    android:id="@+id/addbutton"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@mipmap/ic_launcher" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/removebuttonlayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/radiusCounter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0" />
+
+                                <SeekBar
+                                    android:id="@+id/SBradius"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_weight="4"
+                                    android:maxHeight="5dp"
+                                    android:progress="50"
+                                    android:progressDrawable="@mipmap/ic_launcher"
+                                    android:thumb="@mipmap/ic_launcher" />
+
+                                <ImageButton
+                                    android:id="@+id/removebutton"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="1dp"
+                                    android:background="@mipmap/ic_launcher"
+                                    android:focusable="true" />
+
+                                <ImageButton
+                                    android:id="@+id/acceptbutton"
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginLeft="9dp"
+                                    android:background="@mipmap/ic_launcher"
+                                    android:focusable="true" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+
+                    </RelativeLayout>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Daily Report" />
+
+
+                    <employeeconnect.panacloud.com.ui.fragments.FlowLayout
+                        android:id="@+id/flowLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal"/>
+
+                </RelativeLayout>
+
+
+            </ScrollView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_above="@+id/bottom_buttons_layout"
+                android:background="#ff979797"/>
+
+            <RelativeLayout
+                android:id="@+id/bottom_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="15dp">
+
+
+                <Button
+                    android:id="@+id/save_policy_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@mipmap/ic_launcher"
+                    android:text="Save"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/assign_policy_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@mipmap/ic_launcher"
+                    android:text="Assign"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
