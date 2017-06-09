@@ -1,41 +1,47 @@
 package com.medlicense;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.PersistableBundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.webkit.*;
-import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity  extends Activity {
-
+public class MainActivity  extends Activity  {
+    String tel = "tel:770.456.5932";
     public static String URL = "http://www.medlicense.com/";
-    private WebView view;
+    private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
+    Button callUs ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        view = (WebView) findViewById(R.id.webView);
+        webView = (WebView) findViewById(R.id.webView);
         mySwipeRefreshLayout = (SwipeRefreshLayout)this.findViewById(R.id.swipeContainer);
 
-        view.getSettings().setJavaScriptEnabled(true);
-        view.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
-        view.getSettings().setSupportMultipleWindows(false);
-        view.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        view.getSettings().setSupportZoom(false);
-        view.getSettings().setUseWideViewPort(true);
-        view.getSettings().setLoadWithOverviewMode(true);
-        view.getSettings().setAllowFileAccess(true);
-        view.canGoBack();
-        view.setVerticalScrollBarEnabled(false);
-        view.setHorizontalScrollBarEnabled(false);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
+        webView.getSettings().setSupportMultipleWindows(false);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setAllowFileAccess(true);
+        webView.canGoBack();
+        webView.setVerticalScrollBarEnabled(false);
+        webView.setHorizontalScrollBarEnabled(false);
+//        webView.addJavascriptInterface(jsInterface,"Call Us");
         if (savedInstanceState != null) {
-            view.restoreState(savedInstanceState);
+            webView.restoreState(savedInstanceState);
         } else {
             loadWebContent(URL);
         }
@@ -45,26 +51,26 @@ public class MainActivity  extends Activity {
 
                 if (mySwipeRefreshLayout.isRefreshing()) {
                     mySwipeRefreshLayout.setRefreshing(false);
-                    view.reload();
+                    webView.reload();
                 }
             }
         });
 
         //Stop local links and redirects from opening in browser instead of webview
-        view.setWebViewClient(new WebViewClientClass(this));
+        webView.setWebViewClient(new WebViewClientClass(this));
 
 
     }
 
     private void loadWebContent(String url) {
 //        Toast.makeText(this, "Loading Content Please Wait", Toast.LENGTH_SHORT).show();
-        view.loadUrl(url);
+        webView.loadUrl(url);
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
         super.onSaveInstanceState(outState, outPersistentState);
-        view.saveState(outState);
+        webView.saveState(outState);
     }
 
     @Override
@@ -74,9 +80,9 @@ public class MainActivity  extends Activity {
 
     @Override
     public void onBackPressed() {
-        if (view.copyBackForwardList().getCurrentIndex() >= 1) {
+        if (webView.copyBackForwardList().getCurrentIndex() >= 1) {
             Toast.makeText(MainActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
-            view.goBack();
+            webView.goBack();
         } else {
             super.onBackPressed();
         }
