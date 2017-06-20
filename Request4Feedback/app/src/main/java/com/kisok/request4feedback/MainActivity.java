@@ -7,64 +7,61 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.provider.Settings;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.RequiresApi;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.kisok.request4feedback.client.WebViewClientClass;
-import com.kisok.request4feedback.receiver.ConnectivityReceiver;
 
-public class MainActivity extends Activity implements ConnectivityReceiver.ConnectivityReceiverListener {
+
+public class MainActivity extends Activity {
 
     private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     public static String URL = "https://www.request4feedback.com/dev/";
-    private static String TAG = MainActivity.class.getSimpleName();
-    private ProgressBar progressBar;
     public static int counter = 0;
-    private Snackbar snackbar;
     private ImageView imageView;
     private AlertDialog.Builder builder;
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.isLongPress()){
+            finish();
+        }
+        return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        MainActivity.this.startLockTask();
         //keeps the screen on until app is running
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        View v = this.findViewById(android.R.id.content);
-        snackbar = Snackbar
-                .make(v, "No Internet Connectivity !", Snackbar.LENGTH_INDEFINITE);
         webView = (WebView) findViewById(R.id.webView);
         mySwipeRefreshLayout = (SwipeRefreshLayout) this.findViewById(R.id.swipeContainer);
-        progressBar = (ProgressBar) findViewById(R.id.progressbar);
         imageView = (ImageView) findViewById(R.id.imageView);
         imageView.setVisibility(View.GONE);
         webView.setVisibility(View.GONE);
-        progressBar.setVisibility(View.VISIBLE);
-//        checkConnection();
         settingUpWebView();
 
         isConnected(this);
-//        if (isConnected(this)) {
         if (savedInstanceState != null) {
             webView.restoreState(savedInstanceState);
         } else {
             loadWebContent(URL);
         }
-//        }
         mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -73,28 +70,17 @@ public class MainActivity extends Activity implements ConnectivityReceiver.Conne
                     imageView.setVisibility(View.GONE);
                     webView.setVisibility(View.VISIBLE);
                     webView.reload();
-
-//                        }
-//                        else if (imageView.getVisibility() != View.VISIBLE) {
-//                            imageView.setVisibility(View.GONE);
-//                            webView.setVisibility(View.VISIBLE);
-//                            loadWebContent(URL);
-//
-//                        }
                 }
             }
         });
 
-//Stop local links and redirects from opening in browser instead of webview
+        //Stop local links and redirects from opening in browser instead of webview
         webView.setWebViewClient(new WebViewClientClass(this, imageView, webView));
-//        webView.saveState(savedInstanceState);
     }
 
     private void loadWebContent(String url) {
-//        Toast.makeText(this, "Loading Content Please Wait", Toast.LENGTH_SHORT).show();
         webView.loadUrl(url);
         webView.setVisibility(View.VISIBLE);
-        progressBar.setVisibility(View.GONE);
     }
 
     private void settingUpWebView() {
@@ -126,13 +112,6 @@ public class MainActivity extends Activity implements ConnectivityReceiver.Conne
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         webView.saveState(outState);
-
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
-        super.onSaveInstanceState(outState, outPersistentState);
-        webView.saveState(outState);
     }
 
     @Override
@@ -151,13 +130,13 @@ public class MainActivity extends Activity implements ConnectivityReceiver.Conne
         if ((wifiInfo != null && wifiInfo.isConnected()) || (mobileInfo != null && mobileInfo.isConnected())) {
             return true;
         } else {
-            showDialog(false);
+            showDialog();
             return false;
         }
 
     }
 
-    public void showDialog(boolean isConnected) {
+    public void showDialog() {
 
         builder = new AlertDialog.Builder(this);
 
@@ -189,89 +168,18 @@ public class MainActivity extends Activity implements ConnectivityReceiver.Conne
         }
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "onStart: Kami");
-    }
-
-    @Override
-    protected void onPostResume() {
-        super.onPostResume();
-
-        imageView.setVisibility(View.GONE);
-        webView.setVisibility(View.VISIBLE);
-
-        Log.d(TAG, "onPostResume: Kami");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "onStop: Kami");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "onDestroy: Kami");
-    }
-
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "onRestart: Kami");
-
-//        if (isConnected(MainActivity.this)) {
+        MainActivity.this.startLockTask();
         webView.reload();
-//        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause: Kami");
         counter = 0;
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "onResume: Kami");
-        MyApplication.getInstance().setConnectivityListener(this);
-    }
-
-    private void checkConnection() {
-        boolean isConnected = ConnectivityReceiver.isConnected();
-        showSnackbar(isConnected);
-    }
-
-    private void showSnackbar(boolean isConnected) {
-
-//        int color = Color.WHITE;
-//        View sbView = snackbar.getView();
-//        sbView.setBackgroundColor(Color.parseColor("#CD5334"));
-//        TextView textView = (TextView) sbView.findViewById(android.support.design.R.id.snackbar_text);
-//        textView.setTextColor(color);
-//        boolean snackbarShown = !snackbar.isShown();
-//
-//        if (isConnected) {
-//            if (snackbar.isShown()) {
-//                snackbar.dismiss();
-//            }
-//        } else {
-//            snackbar.show();
-//        }
-
-        if (!isConnected) {
-            showDialog(isConnected);
-        }
-
-    }
-
-    @Override
-    public void onNetworkConnectionChanged(boolean isConnected) {
-//        showSnackbar(isConnected);
-//        showDialog(isConnected);
-    }
 }

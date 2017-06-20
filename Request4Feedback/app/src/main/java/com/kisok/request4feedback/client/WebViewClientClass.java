@@ -1,9 +1,7 @@
 package com.kisok.request4feedback.client;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -13,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.kisok.request4feedback.MainActivity;
+import com.kisok.request4feedback.Util;
 
 /**
  * Created by kamranali on 17/06/2017.
@@ -63,10 +62,7 @@ public class WebViewClientClass extends WebViewClient {
         }
     }
 
-    @Override
-    public boolean shouldOverrideKeyEvent(WebView view, KeyEvent event) {
-        return super.shouldOverrideKeyEvent(view, event);
-    }
+
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -76,84 +72,53 @@ public class WebViewClientClass extends WebViewClient {
             return true;
         }
 
-        if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/about-us.php")) {
+        if (Uri.parse(url).toString().equals(Util.ABOUTUS)) {
             showTaost("couldn't goto ABOUT_US section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://request4feedback.com/dev/about-us.php")) {
+        }else if (Uri.parse(url).toString().equals(Util.ABOUT_US)) {
             showTaost("couldn't goto TEAM section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/profile/login.php")){
+        }else if (Uri.parse(url).toString().equals(Util.LOGIN)){
             return false;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/#pricing")){
+        }else if (Uri.parse(url).toString().equals(Util.PRICING)){
             showTaost("couldn't goto PLAN Section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/profile/create_user.php")){
+        }else if (Uri.parse(url).toString().equals(Util.CREATE_USER)){
             return false;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/contact.php")){
+        }else if (Uri.parse(url).toString().equals(Util.CONTACT)){
             showTaost("couldn't goto CONTACT section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/#features")){
+        }else if (Uri.parse(url).toString().equals(Util.FEATURES)){
             showTaost("couldn't goto Features section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/#home")){
+        }else if (Uri.parse(url).toString().equals(Util.HOME)){
             showTaost("couldn't goto HOME Page");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://request4feedback.com/dev/#")){
+        }else if (Uri.parse(url).toString().equals(Util.HOME_1)){
             showTaost("couldn't goto HOME Page");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://request4feedback.com/dev/#home")){
+        }else if (Uri.parse(url).toString().equals(Util.HOME_2)){
             showTaost("couldn't goto HOME Page");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://request4feedback.com/dev/faq.php")){
+        }else if (Uri.parse(url).toString().equals(Util.FAQ)){
             showTaost("couldn't goto HELP & Support section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/faq.php")){
+        }else if (Uri.parse(url).toString().equals(Util.FAQ_1)){
             showTaost("couldn't goto FAQ section");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://www.request4feedback.com/dev/#home")){
+        }else if (Uri.parse(url).toString().equals(Util.HOME_3)){
             return false;
-        }else if (Uri.parse(url).toString().equals("https://request4feedback.com/dev/privacy-policy.php")){
+        }else if (Uri.parse(url).toString().equals(Util.PRIVACY_POLICY)){
             showTaost("couldn't see Privacy and Policy");
             return true;
-        }else if (Uri.parse(url).toString().equals("https://request4feedback.com/dev/terms-of-service.php")){
+        }else if (Uri.parse(url).toString().equals(Util.TERMS_OF_SERVICE)){
             showTaost("couldn't see Terms & Conditions");
             return true;
-        }else if (Uri.parse(url).toString().equals("mailto:info@request4feedback.com")){
+        }else if (Uri.parse(url).toString().equals(Util.MAIL_TO)){
             showTaost("Couldn't email");
             return true;
         }
         return false;
     }
 
-    @Override
-    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-        return super.shouldOverrideUrlLoading(view, request);
-    }
-
-    @Override
-    public void onPageStarted(WebView view, String url, Bitmap favicon) {
-        super.onPageStarted(view, url, favicon);
-    }
-
-    @Override
-    public void onPageFinished(WebView view, String url) {
-        super.onPageFinished(view, url);
-    }
-
-
-
-    @Override
-    public void onUnhandledKeyEvent(WebView view, KeyEvent event) {
-        super.onUnhandledKeyEvent(view, event);
-    }
-
-    @Override
-    public void onScaleChanged(WebView view, float oldScale, float newScale) {
-        super.onScaleChanged(view, oldScale, newScale);
-    }
-
-    @Override
-    public void onReceivedLoginRequest(WebView view, String realm, String account, String args) {
-        super.onReceivedLoginRequest(view, realm, account, args);
-    }
 }
