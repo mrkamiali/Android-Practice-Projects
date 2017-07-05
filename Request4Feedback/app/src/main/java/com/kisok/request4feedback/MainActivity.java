@@ -7,35 +7,40 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.kisok.request4feedback.Interface.ConnectivityReceiver;
 import com.kisok.request4feedback.client.WebViewClientClass;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ConnectivityReceiver.ConnectivityReceiverListener{
 
     private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
-    public static String URL = "https://www.request4feedback.com/dev/";
+    public static String URL = "https://request4feedback.com/dev/assign_kiosk.php";
     public static int counter = 0;
     private ImageView imageView;
     private AlertDialog.Builder builder;
+    private WifiManager.WifiLock wifiLock;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.isLongPress()){
+        if (event.isLongPress()) {
             finish();
         }
         return false;
@@ -46,9 +51,25 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Manually checking internet connection
+        checkConnection();
+        //changes the top bar color to transparent.
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        //if you want to change the color just change the hash code of transparentColor.
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.transparentColor));
+
+        //will lock wifi if the app remains open.
+        WifiManager wifiManager = (WifiManager) getSystemService(getApplicationContext().WIFI_SERVICE);
+        wifiLock = wifiManager.createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, "MyWifiLock");
+        wifiLock.acquire();
+
+        //will pinned the app to screen
         MainActivity.this.startLockTask();
         //keeps the screen on until app is running
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        //webview initilization
         webView = (WebView) findViewById(R.id.webView);
         mySwipeRefreshLayout = (SwipeRefreshLayout) this.findViewById(R.id.swipeContainer);
         imageView = (ImageView) findViewById(R.id.imageView);
@@ -56,12 +77,17 @@ public class MainActivity extends Activity {
         webView.setVisibility(View.GONE);
         settingUpWebView();
 
+        //checking for the wifi connection.
         isConnected(this);
+
+        //restore the instance state on screen rotation.
         if (savedInstanceState != null) {
             webView.restoreState(savedInstanceState);
         } else {
             loadWebContent(URL);
         }
+
+        //pull down to refresh
         mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -76,6 +102,7 @@ public class MainActivity extends Activity {
 
         //Stop local links and redirects from opening in browser instead of webview
         webView.setWebViewClient(new WebViewClientClass(this, imageView, webView));
+
     }
 
     private void loadWebContent(String url) {
@@ -106,6 +133,7 @@ public class MainActivity extends Activity {
         webView.canGoBack();
         webView.setVerticalScrollBarEnabled(false);
         webView.setHorizontalScrollBarEnabled(false);
+
     }
 
     @Override
@@ -139,7 +167,6 @@ public class MainActivity extends Activity {
     public void showDialog() {
 
         builder = new AlertDialog.Builder(this);
-
         builder.setMessage("Please Connect your Device to wifi !")
                 .setCancelable(false)
                 .setPositiveButton("Connect to WIFI", new DialogInterface.OnClickListener() {
@@ -156,6 +183,7 @@ public class MainActivity extends Activity {
         alert.show();
     }
 
+    //tap to exit code
     @Override
     public void onBackPressed() {
         if (counter == 4) {
@@ -182,4 +210,36 @@ public class MainActivity extends Activity {
         counter = 0;
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        wifiLock.release();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // register connection status listener
+        MyApplication.getInstance().setConnectivityListener(this);
+    }
+    // Method to manually check connection status
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showSnack(isConnected);
+    }
+
+    private void showSnack(boolean isConnected) {
+        if (!isConnected){
+            Toast.makeText(MainActivity.this,"Please connect to internet",Toast.LENGTH_SHORT);
+        }else {
+            Toast.makeText(MainActivity.this,"connected to internet",Toast.LENGTH_SHORT);
+
+        }
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showSnack(isConnected);
+    }
 }

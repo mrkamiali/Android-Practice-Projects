@@ -9,7 +9,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.kisok.request4feedback.MainActivity;
 import com.kisok.request4feedback.Util;
 
@@ -32,7 +31,7 @@ public class WebViewClientClass extends WebViewClient {
     @Override
     public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
         super.onReceivedError(view, request, error);
-        view.loadUrl("file:///android_asset/index.html");
+        view.loadUrl(MainActivity.URL);
 
     }
 
@@ -66,6 +65,7 @@ public class WebViewClientClass extends WebViewClient {
 
     @Override
     public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
         if (view.getUrl().equals(url+"/")){
             return true;
         } else if (view.getUrl().equals(url)){

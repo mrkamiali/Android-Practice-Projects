@@ -21,10 +21,12 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        //changes the color of top bar
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusbarcolor));
 
+        //hold the screen for 2.5 seconds.
         new Handler().postDelayed(new Runnable() {
 
             /*
