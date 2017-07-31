@@ -1,5 +1,6 @@
 package com.uronlinemart;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -10,7 +11,9 @@ import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.provider.Settings;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -26,8 +31,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements WebViewClientClass.Showbar {
-    public static String URL = "http://uronlinemart.com/";
+public class MainActivity extends Activity implements WebViewClientClass.Showbar {
+    public static String URL = "http://www.uronlinemart.com/";
     private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private ImageView imageView;
@@ -46,8 +51,6 @@ public class MainActivity extends AppCompatActivity implements WebViewClientClas
             lastStatus = isConnected;
         }
     };
-    private Toolbar toolbar;
-    private TextView appTitle;
 
 
     @Override
@@ -55,18 +58,14 @@ public class MainActivity extends AppCompatActivity implements WebViewClientClas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar_main);
-        setSupportActionBar(toolbar);
-        appTitle = (TextView) toolbar.findViewById(R.id.title_TextView);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            //if you want to change the color just change the hash code of transparentColor.
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusbarcolor));
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        }
+
 
         //webview initilization
         webView = (WebView) findViewById(R.id.webView);
@@ -95,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements WebViewClientClas
         });
 
         //Stop local links and redirects from opening in browser instead of webview
-        webClient = new WebViewClientClass(this, imageView, webView,appTitle);
+        webClient = new WebViewClientClass(this, imageView, webView);
         webView.setWebViewClient(webClient);
 
 
@@ -154,9 +153,6 @@ public class MainActivity extends AppCompatActivity implements WebViewClientClas
         webView.getSettings().setSupportMultipleWindows(false);
         //LayoutAlgorithms
         webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        //Enables the cache
-        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-        webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setUseWideViewPort(true);
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setSavePassword(true);

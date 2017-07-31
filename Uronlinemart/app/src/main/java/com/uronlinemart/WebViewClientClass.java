@@ -18,11 +18,10 @@ class WebViewClientClass extends WebViewClient {
     private WebView webView;
     private String lastUrl;
     public Showbar showbar;
-    private TextView appTitle;
 
-    public WebViewClientClass(MainActivity mainActivity, ImageView imageView, WebView webView,TextView textView) {
+    public WebViewClientClass(MainActivity mainActivity, ImageView imageView, WebView webView) {
         super();
-        this.appTitle = textView;
+
         this.activity = mainActivity;
         this.imageView = imageView;
         this.webView = webView;
@@ -58,7 +57,6 @@ class WebViewClientClass extends WebViewClient {
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
-        appTitle.setText(view.getTitle());
         if (showbar != null) {
             showbar.onstoploading();
         }
