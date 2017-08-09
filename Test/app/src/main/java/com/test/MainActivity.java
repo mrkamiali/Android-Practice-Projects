@@ -1,4 +1,4 @@
-package com.uronlinemart;
+package com.test;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -6,20 +6,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -28,14 +22,14 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements WebViewClientClass.Showbar {
-    public static String URL = "http://www.uronlinemart.com/";
+    public static String URL = "https://www.google.com/";
     private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private ImageView imageView;
+    private ImageView splashScreen;
     private AlertDialog.Builder builder;
     private boolean lastStatus = true;
     private WebViewClientClass webClient;
@@ -52,7 +46,6 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,13 +58,12 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.statusbarcolor));
 
         }
-
-
         //webview initilization
         webView = (WebView) findViewById(R.id.webView);
         progress_bar_web = (ProgressBar) findViewById(R.id.progress_bar_web);
         mySwipeRefreshLayout = (SwipeRefreshLayout) this.findViewById(R.id.swipeContainer);
         imageView = (ImageView) findViewById(R.id.imageView);
+        splashScreen = (ImageView) findViewById(R.id.splashScreen);
         imageView.setVisibility(View.GONE);
         webView.setVisibility(View.GONE);
         settingUpWebView();
@@ -94,7 +86,7 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         });
 
         //Stop local links and redirects from opening in browser instead of webview
-        webClient = new WebViewClientClass(this, imageView, webView);
+        webClient = new WebViewClientClass(this, imageView, webView,splashScreen);
         webView.setWebViewClient(webClient);
 
 
@@ -104,6 +96,47 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         } else {
             loadWebContent(URL);
         }
+
+    }
+
+    private void showSnack(boolean isConnected) {
+        if (!isConnected) {
+            Toast.makeText(MainActivity.this, "Please connect to the internet", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, "Connected to internet", Toast.LENGTH_SHORT).show();
+            if (!lastStatus) {//last = false && contd = true
+                webClient.reload();
+            }
+
+        }
+    }
+
+    private void settingUpWebView() {
+
+        webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        webView.getSettings().setAppCacheEnabled(true);
+        webView.setFocusable(true);
+        webView.setFocusableInTouchMode(true);
+        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webView.getSettings().setDatabaseEnabled(true);
+        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
+        webView.getSettings().setSupportMultipleWindows(false);
+        //LayoutAlgorithms
+        webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setDomStorageEnabled(true);
+        webView.getSettings().setSavePassword(true);
+        webView.getSettings().setSaveFormData(true);
+        webView.getSettings().setSupportZoom(false);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.getSettings().setAllowFileAccess(true);
+        webView.getSettings().setEnableSmoothTransition(true);
+        webView.canGoBack();
+        webView.setVerticalScrollBarEnabled(true);
+        webView.setHorizontalScrollBarEnabled(false);
+        webView.setWebChromeClient(new ChromeClient());
     }
 
     private void loadWebContent(String url) {
@@ -126,6 +159,15 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
 
     }
 
+    public class ChromeClient extends WebChromeClient {
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            super.onProgressChanged(view, newProgress);
+            progress_bar_web.setVisibility(View.VISIBLE);
+            progress_bar_web.setProgress(newProgress);
+        }
+    }
+
     public void showDialog() {
         builder = new AlertDialog.Builder(this);
         builder.setMessage("Please Connect to INTERNET !")
@@ -144,35 +186,6 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         alert.show();
     }
 
-    private void settingUpWebView() {
-
-        webView.setFocusable(true);
-        webView.setFocusableInTouchMode(true);
-
-        webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
-        webView.getSettings().setDatabaseEnabled(true);
-        webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
-//        webView.getSettings().setUserAgentString("Android WebView");
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setJavaScriptCanOpenWindowsAutomatically(false);
-        webView.getSettings().setSupportMultipleWindows(false);
-        //LayoutAlgorithms
-        webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
-        webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setDomStorageEnabled(true);
-        webView.getSettings().setSavePassword(true);
-        webView.getSettings().setSaveFormData(true);
-        webView.getSettings().setSupportZoom(false);
-////        webView.getSettings().setUseWideViewPort(true);
-        webView.getSettings().setLoadWithOverviewMode(true);
-        webView.getSettings().setAllowFileAccess(true);
-        webView.getSettings().setEnableSmoothTransition(true);
-        webView.canGoBack();
-        webView.setVerticalScrollBarEnabled(true);
-        webView.setHorizontalScrollBarEnabled(false);
-        webView.setWebChromeClient(new ChromeClient());
-    }
-
     @Override
     public void onBackPressed() {
         if (webView.copyBackForwardList().getCurrentIndex() >= 1) {
@@ -180,18 +193,6 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
             webView.goBack();
         } else {
             super.onBackPressed();
-        }
-    }
-
-    private void showSnack(boolean isConnected) {
-        if (!isConnected) {
-            Toast.makeText(MainActivity.this, "Please connect to the internet", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(MainActivity.this, "Connected to internet", Toast.LENGTH_SHORT).show();
-            if (!lastStatus) {//last = false && contd = true
-                webClient.reload();
-            }
-
         }
     }
 
@@ -224,28 +225,4 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         progress_bar_web.setVisibility(View.INVISIBLE);
 
     }
-
-    public class ChromeClient extends WebChromeClient {
-        @Override
-        public void onProgressChanged(WebView view, int newProgress) {
-            super.onProgressChanged(view, newProgress);
-            progress_bar_web.setProgress(newProgress);
-        }
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        webView.saveState(outState);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState != null) {
-            webView.restoreState(savedInstanceState);
-        }
-    }
-
-
 }
