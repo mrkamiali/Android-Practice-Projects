@@ -25,7 +25,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements WebViewClientClass.Showbar {
-    public static String URL = "https://www.google.com/";
+    public static String URL = "https://www.ghanaaffairs.com/";
     private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private ImageView imageView;

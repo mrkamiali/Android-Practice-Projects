@@ -2,7 +2,9 @@ package com.praxiswissenfrgitarristen;
 
 import android.app.Activity;
 import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -43,6 +45,17 @@ class WebViewClientClass extends WebViewClient {
     }
 
     @Override
+    public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+        return super.shouldOverrideUrlLoading(view, request);
+    }
+
+    @Override
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        return super.shouldOverrideUrlLoading(view, url);
+
+    }
+
+    @Override
     public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
         view.loadUrl("file:///android_asset/errorpage.html");
         super.onReceivedError(view, errorCode, description, failingUrl);
@@ -60,6 +73,7 @@ class WebViewClientClass extends WebViewClient {
         if (splashImageView.getVisibility() == View.VISIBLE) {
             splashImageView.setVisibility(View.GONE);
         }
+
         if (showbar != null) {
             showbar.onstoploading();
         }

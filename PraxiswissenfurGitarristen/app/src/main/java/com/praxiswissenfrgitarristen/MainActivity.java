@@ -25,7 +25,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 public class MainActivity extends Activity implements WebViewClientClass.Showbar {
-    public static String URL = "https://www.stickytunes.net/";
+    public static String URL = "https://www.stickytunes.net/andappstart";
     private WebView webView;
     private SwipeRefreshLayout mySwipeRefreshLayout;
     private ImageView imageView;
@@ -37,8 +37,8 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
     private BroadcastReceiver netReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo activeNetwork = connectivityManager.getActiveNetworkInfo();
             boolean isConnected = activeNetwork != null
                     && activeNetwork.isConnectedOrConnecting();
             showSnack(isConnected);
@@ -101,9 +101,9 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
 
     private void showSnack(boolean isConnected) {
         if (!isConnected) {
-            Toast.makeText(MainActivity.this, "Please connect to the internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Keine Internetverbindung vorhanden!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(MainActivity.this, "Connected to internet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Daten werden geladen", Toast.LENGTH_SHORT).show();
             if (!lastStatus) {//last = false && contd = true
                 webClient.reload();
             }
@@ -112,7 +112,9 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
     }
 
     private void settingUpWebView() {
-
+        webView.getSettings().setDisplayZoomControls(false);
+        webView.getSettings().setBuiltInZoomControls(true);
+        webView.getSettings().setSupportZoom(true);
         webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webView.getSettings().setAppCacheEnabled(true);
         webView.setFocusable(true);
@@ -129,7 +131,6 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setSavePassword(true);
         webView.getSettings().setSaveFormData(true);
-        webView.getSettings().setSupportZoom(false);
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setEnableSmoothTransition(true);
@@ -158,12 +159,23 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
         }
 
     }
-
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        webView.saveState(outState);
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        if (savedInstanceState != null) {
+//            webView.restoreState(savedInstanceState);
+//        }
+//    }
     public class ChromeClient extends WebChromeClient {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             super.onProgressChanged(view, newProgress);
-            progress_bar_web.setVisibility(View.VISIBLE);
             progress_bar_web.setProgress(newProgress);
         }
     }
@@ -222,7 +234,6 @@ public class MainActivity extends Activity implements WebViewClientClass.Showbar
 
     @Override
     public void onstoploading() {
-        progress_bar_web.setVisibility(View.INVISIBLE);
-
+        progress_bar_web.setVisibility(View.GONE);
     }
 }
