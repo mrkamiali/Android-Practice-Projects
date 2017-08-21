@@ -1,0 +1,7 @@
+#Fri Nov 04 16:32:58 PKT 2016
+base.0=/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_db1e210482ac68a607339c77d477ca9cc12a36a2
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_16af08c96ef07419ae115e624b004edb8dea8a4d/classes.dex
+base.1=/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_16af08c96ef07419ae115e624b004edb8dea8a4d
+file.0=/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_db1e210482ac68a607339c77d477ca9cc12a36a2/classes.dex

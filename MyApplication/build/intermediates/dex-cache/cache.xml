@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_88518cb3dfbd06283bfaba1cd0880a6263fdc94a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_082c76d664e7dd8bad1d867e4bfd587dd78916e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_ba3ffa25dbac2649c8f35517419a2181c3c5307f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_266cca5c11a6749c9a6cec366740af70be9e0d2e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d8614c549979f2f72f2ccb1be8dde995cbcd5dcd">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_db1e210482ac68a607339c77d477ca9cc12a36a2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="884fa4753a6c70a70ff31c4f784b5c1371b5dba5">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_16af08c96ef07419ae115e624b004edb8dea8a4d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kamranali/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_d60aacdcad6a2f6c0cd80f71fce02d1a847eba44/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_10027fe36d237b4f49b1322b457f4b557d552cd7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_a88657a25ddbfcf8cf24d1ba9c0aee38fa09fbb7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_e7c780462d7f19b519c1ea6cf2ed431e670fe3c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_01c253466efb025c5e4425e4cbf4541cb9243ead/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_dc97eb310c6e9d94db3cc7ed7b80545e037d78a6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_9b9737ed7e8d9019706ac681e42e34b7b68aa05f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_5ad3105e85028d810f6ce2ae62404163af6cc794/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_be0279e97c47b6e3957404c4430fa0fe0bf60f1a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_8f9541180df605cb6beb1eb3824e4754ee0e28c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Volumes/Data/panacloud/TasksPana/MyApplication/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_b5bb6205a7863b7ab10333c1abc04055a74b001e/classes.dex" />
+    </item>
+
+</items>
