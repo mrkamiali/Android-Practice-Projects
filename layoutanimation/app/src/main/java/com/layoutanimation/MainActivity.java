@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     dest = 0;
                 }
                 ObjectAnimator animation3 = ObjectAnimator.ofFloat(aniView,
-                        "alpha", dest);
+                        View.ALPHA, dest);
                 animation3.setDuration(2000);
                 animation3.start();
                 break;
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         0f);
                 fadeOut.setDuration(2000);
                 ObjectAnimator mover = ObjectAnimator.ofFloat(aniView,
-                        "translationX", -500f, 0f);
+                        View.TRANSLATION_Y, 500f, 0f);
                 mover.setDuration(2000);
                 ObjectAnimator fadeIn = ObjectAnimator.ofFloat(aniView, "alpha",
                         0f, 1f);
