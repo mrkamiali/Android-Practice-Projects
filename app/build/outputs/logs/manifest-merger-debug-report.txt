@@ -1,0 +1,150 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/359898a0ab82c78878d6c1049b7284f0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:17:1-30:12
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:5:5-19:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/359898a0ab82c78878d6c1049b7284f0/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/359898a0ab82c78878d6c1049b7284f0/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.speecrecognizeapp.MainActivity
+ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:12:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/359898a0ab82c78878d6c1049b7284f0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/359898a0ab82c78878d6c1049b7284f0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:20:5-22:41
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		ADDED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+		INJECTED from /Volumes/Data/panacloud/TasksPana/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/418384586c3f68b05b139a45af7d3160/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/0268fb1b285669d67eb625b308f5ba57/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/338cc2983b1e3043469e87345e621a9a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/6b2617c506888578d74d6e80f5c7e712/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/ebb03d0733ef72a2b1ef693a6fced41d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/9ef21584ea6ffa8b1f202ae5eae527c1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/985ec9e90e6f009e10576da1076e1085/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/8ba99c95f3b228a56b46a3fcd9f2d39d/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.1.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/a1734e14c8ccc039c35cf4ea1a3cc4b5/AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/kamranali/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/d9fb73d7b02fbaf2c54c587f062b27a2/AndroidManifest.xml:26:13-58
