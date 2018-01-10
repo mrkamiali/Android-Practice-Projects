@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         chipCloud.addChip("HelloWorld!");
 
-        String[] demoArray = getResources().getStringArray(R.array.demo_array);
+        final String[] demoArray = getResources().getStringArray(R.array.demo_array);
         chipCloud.addChips(demoArray);
 
         chipCloud.setChecked(2);
@@ -118,8 +118,16 @@ public class MainActivity extends AppCompatActivity {
         //Horizontal Scroll
         LinearLayout horizontalScroll = (LinearLayout) findViewById(R.id.horizontal_layout);
         config.useInsetPadding = true;
-        config.selectMode = ChipCloud.SelectMode.multi;
+        config.selectMode = ChipCloud.SelectMode.single;
         ChipCloud horizontalChipCloud = new ChipCloud(this, horizontalScroll, config);
         horizontalChipCloud.addChips(demoArray);
+        horizontalChipCloud.setListener(new ChipListener() {
+            @Override
+            public void chipCheckedChange(int index, boolean checked, boolean userClick) {
+                if(userClick) {
+                    Log.d(TAG, String.format("Chip clicked at index: %d text: %s", index, demoArray[index]));
+                }
+            }
+        });
     }
 }
